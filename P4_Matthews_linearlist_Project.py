@@ -26,41 +26,42 @@ def mainProgram():
 8. Iterative Binary Search 
 9. Print lists 
 10. Quit   """)
-            if choice == "1":
-                addToList()    
-            elif choice == "2":
-                addABunch()   
-            elif choice == "3":
-                indexValues()   
-            elif choice == "4":
-                sortList(myList)       
-            elif choice == "5":
-                randomSearch()               
-            elif choice == "6":
-                linearSearch()
-            elif choice == "7":
-                binSearch = input("What number are you looking for?  ")
-                recursiveBinarySearch(unique_list, 0, len(unique_list)-1, int(binSearch))
-            elif choice == "8":
-                binSearch = input("What number are you looking for?  ")
-                result = iterativeBinarySearch(unique_list, int(binSearch))
-                if result != -1:
-                    print("Your number is at index position {}".format(result))
-                else:
-                    print("Your number is not found in that list, bud!")
-            elif choice == "9":
-                printLists()
+        if choice == "1":
+            addToList()    
+        elif choice == "2":
+            addABunch()   
+        elif choice == "3":
+            indexValues()   
+        elif choice == "4":
+            sortList(myList)       
+        elif choice == "5":
+            randomSearch()               
+        elif choice == "6":
+            linearSearch()
+        elif choice == "7":
+            binSearch = input("What number are you looking for?  ")
+            recursiveBinarySearch(unique_list, 0, len(unique_list)-1, int(binSearch))
+        elif choice == "8":
+            binSearch = input("What number are you looking for?  ")
+            result = iterativeBinarySearch(unique_list, int(binSearch))
+            if result != -1:
+                print("Your number is at index position {}".format(result))
             else:
-                break
-        except:
-            print("An error occurred")
+                print("Your number is not found in that list, bud!")
+        elif choice == "9":
+            printLists()
+        else:
+            break
+        
                       
 def addToList():
     print("Adding to a list! Great choice!")
     newItem = input ("Please type in integer!  ")
     myList.append(int(newItem))
     #we need th about errors 
-
+"""
+this adds the bunch of numbers to the list when you run it 
+"""
 def addABunch():
     print("We're gonna add a bunch of numbers!")
     numToAdd = input("How many integers would you like to add? ")
@@ -68,7 +69,9 @@ def addABunch():
     for x in range(0, int(numToAdd)):
         myList.append(random.randint(0, int(numRange)))
     print("Your list is now complete!") 
-
+"""
+this sorts the list when you run it so that its tidy
+"""
 
 def sortList(myList):
     #note that this is the first function we've built here that takes ARGUMENTS
@@ -90,6 +93,9 @@ def randomSearch():
     print("Here's a rondon value from your list!")
     print(myList[random.randint(0, len(myList)-1)])
 
+"""
+this searches for your number when your running the code 
+"""
 def linearSearch():
     print("We're going to search through the list IN THE WORST WAY POSSIBLE")
     searchItem = input("What are you looking for? Number-wise?  ")
